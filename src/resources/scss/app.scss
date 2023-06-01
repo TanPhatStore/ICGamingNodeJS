@@ -1,0 +1,79 @@
+@import 'variable';
+
+.test {
+    color: $red-color;
+    background-color: azure;
+    text-align: end;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn button {
+    font-size: 20px;
+}
+
+.table-container{
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.table-container thead {
+    position: sticky;
+    top: 0; /* Giữ lại phần header ở vị trí trên cùng */
+    background-color: #f8f8f8; /* Tùy chỉnh màu nền cho header */
+  }
+
+th, td {
+    font-weight: 600;
+    font-size: 16px;
+    width: 150px;
+    // border: 1px solid black;
+    text-align: center;
+}
+
+td {
+    font-weight: 400;
+    height: 60px;
+}
+
+.image {
+    width: 300px;
+}
+
+.title  {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.listGames {
+    display: flex;
+    justify-content: center;
+}
+
+.group {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.form {
+    width: 500px;
+    margin: 0 30px;
+}
+
+label {
+    font-size: 16px;
+}
+
+.button-actions button{
+    width: 90px;
+    margin: 0 5px;
+}
+
+.texts {
+    display: flex;
+    background-color: red($color: #000000);
+}

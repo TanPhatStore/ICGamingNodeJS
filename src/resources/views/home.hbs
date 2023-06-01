@@ -1,0 +1,153 @@
+<h2 class="title">List Games</h2>
+<div class="listGames table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Capacity</th>
+                <th>RAM</th>
+                <th>Logo</th>
+                <th>Logo Site</th>
+                <th class="image">Images</th>
+                <th>Actions</th>    
+            </tr>
+        </thead>
+        <tbody>
+            {{#each games}}
+            <tr>
+                <td>{{this.title}}</td>
+                <td>{{this.capacity}}</td>
+                <td>{{this.ram}}</td>
+                <td><img src={{this.logo}} height="70%" alt=""> </td>
+                <td><img src={{this.logoSite}} height="70%" alt=""> </td>
+                <td>
+                    {{#each this.images}}
+                        <img src={{this}} height="60%" alt="">
+                    {{/each}}
+                </td>
+                <td >
+                    <form action="/game/game-actions-update" method="GET" style="display: flex; justify-content: center; align-items: center;">
+                        <input type="hidden" name="gameId" value="{{this._id}}">
+                        <button type="submit" class="btn btnSuaGame btn-primary">Sửa</button>
+                        <div class="px-1"></div>
+                        <button type="button" data-id="{{this._id}}" class="btn btnXoaGame btn-danger">Xóa</button>
+                    </form>
+                </td>
+                
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+<div class="mt-3"></div>
+<div class="btn">
+    <form action="http://localhost:3002/game/game-actions-insert", method="GET" style="display: flex; justify-content: center;">
+        <button type="submit" class="btn btn-primary">Thêm</button>
+        <div class="px-1"></div>
+        <button type="button" id="btnXoaAllGame" class="btn btn-danger">Xóa Tất Cả</button>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal" id="modalXoaAllGame" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Xóa Tất Cả Game</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Bạn Chắc Chắn Muốn Xóa Tất Cả Game Chứ ?</p>
+      </div>
+      <div class="modal-footer">
+        <form action="/game/game-deleteAll" method="POST" style="display: flex;">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            <div class="px-1"></div>
+            <button type="submit" class="btn btn-primary">Chắc Chắn</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#btnXoaAllGame').click(function() {
+            $('#modalXoaAllGame').modal('show');
+        });
+    });
+</script>
+
+
+<div class="modal" id="modalXoaGame" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Xóa Game Này</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>Bạn Chắc Chắn Muốn Xóa Game Này Chứ ?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            <form action="/game/game-delete" method="POST">
+                <input type="hidden" id="inputXoaGame" name="gameId" value="">
+                <button type="submit" class="btn btn-primary">Chắc Chắn</button>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="modalXoaGame" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Sửa Game Này</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>Bạn Chắc Chắn Muốn Xóa Game Này Chứ ?</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            <form action="/game/game-delete" method="POST">
+                <input type="hidden" id="inputXoaGame" name="gameId" value="">
+                <button type="submit" class="btn btn-primary">Chắc Chắn</button>
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.btnXoaGame').click(function() {
+            $('#modalXoaGame').modal('show');
+            $('#inputXoaGame').val($(this).data('id'))
+        });
+    });
+</script>

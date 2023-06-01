@@ -1,0 +1,109 @@
+<form action="/game/game-update" method="POST"  >
+    <input type="hidden" id="inputXoaGame" name="gameId" value="{{game._id}}">
+    <div class="group">
+        <div class="form">
+            <div class="form-group">
+                <label for="customInput">Title</label>
+                <div class="mt-1"></div>
+                <input type="text" value="{{game.title}}"  name="title" class="form-control custom-input" id="customInput" placeholder="Enter text">
+            </div>
+            <div class="mt-2"></div>
+            <div class="form-group">
+                <label for="customInput">Gender</label>
+                <div class="mt-1"></div>
+                <input type="text" value="{{game.gender}}" name="gender" class="form-control custom-input" id="customInput" placeholder="Enter text">
+            </div>
+            <div class="mt-2"></div>
+            <div class="form-group">
+                <label for="customInput">Capacity</label>
+                <div class="mt-1"></div>
+                <input type="text" value="{{game.capacity}}" name="capacity" class="form-control custom-input" id="customInput" placeholder="Enter text">
+            </div>
+            <div class="mt-2"></div>
+            <div class="form-group">
+                <label for="customInput">NumberUser</label>
+                <div class="mt-1"></div>
+                <input type="text" value="{{game.numberUser}}" name="numberUser" class="form-control custom-input" id="customInput" placeholder="Enter text">
+            </div>
+            <div class="mt-2"></div>
+            <div class="form-group">
+                <label for="customInput">Ram</label>
+                <div class="mt-1"></div>
+                <input type="text" value="{{game.ram}}" name="ram" class="form-control custom-input" id="customInput" placeholder="Enter text">
+            </div>
+            <div class="mt-2"></div>
+            <div class="form-group">
+                <label for="customInput">Language</label>
+                <div class="mt-1"></div>
+                <input type="text" value="{{game.language}}" name="language" class="form-control custom-input" id="customInput" placeholder="Enter text">
+            </div>
+            <div class="mt-2"></div>
+            <div class="form-group">
+                <label for="customInput">Images</label>
+                <div class="mt-1 texts">
+                    {{#each game.images}}
+                        <input type="text" value="{{this}}" name="images" class="form-control custom-input" id="customInput" placeholder="Enter text">
+                    {{/each}}
+                    <input type="text" name="images" class="form-control custom-input" id="customInput" placeholder="Enter text">
+                    <input type="text" name="images" class="form-control custom-input" id="customInput" placeholder="Enter text">
+                    <input type="text" name="images" class="form-control custom-input" id="customInput" placeholder="Enter text">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="form">
+            <div class="form-group">
+                <label for="customInput">Logo</label>
+                <div class="mt-1"></div>
+                <input type="text" value="{{game.logo}}" name="logo" class="form-control custom-input" id="customInput" placeholder="Enter text">
+            </div>
+            <div class="mt-2"></div>
+            <div class="form-group">
+                <label for="customInput">Links Download</label>
+                <div class="mt-1 texts">
+                    {{#each game.linksDownload}}
+                        <input type="text" value="{{this}}" name="linksDownload" class="form-control custom-input" id="customInput" placeholder="Enter text">
+                    {{/each}}
+                    <input type="text" name="linksDownload" class="form-control custom-input" id="customInput" placeholder="Enter text">
+                    <input type="text" name="linksDownload" class="form-control custom-input" id="customInput" placeholder="Enter text">
+                    <input type="text" name="linksDownload" class="form-control custom-input" id="customInput" placeholder="Enter text">
+                </div>
+            </div>
+            <div class="mt-2"></div>
+            <div class="form-group">
+                <label for="customInput">Logo Site</label>
+                <div class="mt-1"></div>
+                <input type="text" value="{{game.logoSite}}" name="logoSite" class="form-control custom-input" id="customInput" placeholder="Enter text">
+            </div>
+            <div class="mt-2"></div>
+            <div class="form-group">
+                <label for="customInput">Release Date</label>
+                <div class="mt-1"></div>
+                <input type="date" value="{{formatDate game.releaseDate}}" name="releaseDate"  class="form-control custom-input" id="customInput" placeholder="Enter text">
+            </div>
+            <div class="mt-2"></div>
+            <div class="form-group">
+                <label for="customInput">Update Date</label>
+                <div class="mt-1"></div>
+                <input type="date" value="{{formatDate game.updateDate}}" name="updateDate" disabled="true" class="form-control custom-input" id="customInput" placeholder="Enter text">
+            </div>
+            <div class="mt-2"></div>
+            <div class="form-group">
+                <label for="customInput">Series</label>
+                <div class="mt-1"></div>
+                <input type="text" value="{{game.series}}" name="series" class="form-control custom-input" id="customInput" placeholder="Enter text">
+            </div>
+            <div class="mt-2"></div>
+            <div class="form-group">
+                <label for="customInput">GameType</label>
+                <div class="mt-1"></div>
+                <input type="text" value="{{game.gameType}}" name="gameType" class="form-control custom-input" id="customInput" placeholder="Enter text">
+            </div>
+        </div>
+    </div>
+    <div class="mt-3"></div>
+    <div class="btn button-actions">
+        <button type="submit" class="btn btn-success">Sửa</button>
+    </div>
+</form>
+
