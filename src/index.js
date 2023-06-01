@@ -17,10 +17,13 @@ app.use(express.urlencoded({
 }))
 app.use(express.json())
 
-app.use(cors({
-  origin: 'http://localhost:3000',
-  origin: 'https://ic-gaming-download-game.vercel.app/'
-}));
+app.use(cors([{
+    origin: 'http://localhost:3000'
+  },
+  {
+    origin: 'https://ic-gaming-download-game.vercel.app/'
+  }
+]));
 
 app.engine('hbs', engine({
   extname:'.hbs',
