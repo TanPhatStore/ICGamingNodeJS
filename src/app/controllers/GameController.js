@@ -1,5 +1,6 @@
 
 const Game = require('../models/Games')
+const fs = require('fs')
 
 class GameController {
 
@@ -9,13 +10,20 @@ class GameController {
     }
 
     // GET /game-api-v1
-    async game_api (req, res) {
-        try {
-            const documents = await Game.find({});
-            res.json(documents);
-        } catch (error) {
-            res.status(500).json({ error: 'Internal server error' });
-        }
+    game_api (req, res) {
+
+        fs.readFile('data.json', 'utf8', (err, data) => {
+            if (err) {
+              console.error('Lỗi khi đọc tệp JSON:', err);
+              return;
+            }
+            const documents = JSON.parse(data);
+            try {
+                res.json(documents)
+            } catch (error) {
+                res.status(500).json({ error: 'Internal server error' });
+            }
+        });
     }
 
     // GET /game-actions
