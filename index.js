@@ -4,11 +4,11 @@ const morgan = require('morgan')
 const {engine} = require('express-handlebars')
 const app = express()
 const port = 3002
-const route = require('./routes')
-const db = require('./config/db')
+const route = require('./src/routes')
+const db = require('./src/config/db')
 const cors = require('cors')
 const { format } = require('date-fns')
-const Game = require('./app/models/Games')
+const Game = require('./src/app/models/Games')
 const fs = require('fs');
 
 app.use(express.static(path.join(__dirname, 'public')))
