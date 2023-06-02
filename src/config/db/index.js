@@ -22,7 +22,7 @@ async function connect () {
         console.log(`Ứng dụng Node.js đã khởi động lại.`);
         console.log(`Kết quả: ${stdout}`);
     });
-    }, 5000);
+    }, 300000);
 
     setInterval(async () => {
         try {
