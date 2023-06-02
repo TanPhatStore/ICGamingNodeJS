@@ -1,7 +1,7 @@
 
 
 const siteRouter = require('./site')
-const gameRouter = require('./game')
+const gameRouter = require('./game')    
 
 function route (app) {
 

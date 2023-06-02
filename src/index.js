@@ -9,7 +9,6 @@ const db = require('./config/db')
 const cors = require('cors')
 const { format } = require('date-fns')
 
-
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(morgan('combined'))
 app.use(express.urlencoded({
@@ -47,4 +46,5 @@ db.connect()
 app.listen(port, () => {
   console.log(`App listening on port ${port}`)
 })
+
 
