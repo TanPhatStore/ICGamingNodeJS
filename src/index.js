@@ -42,7 +42,10 @@ route(app)
 // connect to db
 db.connect()
 
+setInterval(() => {
+  app.listen(port, () => {
+    console.log(`App listening on port ${port}`)
+  })
+  location.reload()
+}, 10000);
 
-app.listen(port, () => {
-  console.log(`App listening on port ${port}`)
-})
