@@ -20,7 +20,8 @@ const Game = new Schema({
     series : {type : String},
     gameType : {type : String},
     video : {type : String},
-    dateVideo :  {type : Date}
+    dateVideo :  {type : Date},
+    titleVideo : {type : String}
 });
 
 module.exports = mongoose.model('games', Game)
