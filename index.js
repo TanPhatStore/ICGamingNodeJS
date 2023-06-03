@@ -49,19 +49,3 @@ app.listen(port, () => {
   console.log(`App listening on port ${port}`)
 })
 
-
-setInterval(async() => {
-    try {
-        const documents = await Game.find({});
-        fs.writeFile('data.json', JSON.stringify(documents), 'utf8', (err) => {
-          if (err) {
-            console.error('Lỗi khi ghi tệp JSON:', err);
-            return;
-          }
-          console.log('Đã ghi tệp JSON thành công!');
-        });
-    } catch (error) {
-        console.log(error)
-    }
-}, 300000)
-

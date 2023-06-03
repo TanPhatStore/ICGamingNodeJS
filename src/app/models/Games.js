@@ -18,7 +18,9 @@ const Game = new Schema({
     releaseDate : {type : Date},
     updateDate : {type : Date},
     series : {type : String},
-    gameType : {type : String}
+    gameType : {type : String},
+    video : {type : String},
+    dateVideo :  {type : Date}
 });
 
 module.exports = mongoose.model('games', Game)
