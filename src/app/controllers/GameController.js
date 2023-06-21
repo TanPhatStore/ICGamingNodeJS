@@ -1,6 +1,5 @@
 
 const Game = require('../models/Games')
-const fs = require('fs')
 
 class GameController {
 
