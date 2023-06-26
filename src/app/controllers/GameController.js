@@ -82,6 +82,16 @@ class GameController {
             .catch((error) => res.status(500).json({ error: 'Internal server error' }));
     }
       
+    async updateDownloads (req, res) {
+        try {
+            const game = await Game.findById(req.body.gameID)
+            await Game.updateOne({_id : game._id}, {downloads : (game.downloads + 1)})   
+            res.json({status : 200, message : 'success'})
+        } catch (error) {
+            res.json({status : 500 , message : 'fail'})
+        }
+
+    }
 }
 
 module.exports = new GameController
