@@ -59,7 +59,12 @@ class GameController {
         let filteredArray1 = game.linksDownload.filter(function(element) {
             return element !== "";
         });
-        game.linksDownload = filteredArray1
+        game.linksDownload = filteredArray17
+
+        let filteredArray2 = game.linksDownloadSecond.filter(function(element) {
+            return element !== "";
+        });
+        game.linksDownloadSecond = filteredArray2
         game.save()
           .then(() => res.redirect('/'))
           .catch((error) => res.status(500).json({ error: 'Internal server error' }));
@@ -77,6 +82,12 @@ class GameController {
             return element !== "";
         });
         game.linksDownload = filteredArray1
+
+        let filteredArray2 = game.linksDownloadSecond.filter(function(element) {
+            return element !== "";
+        });
+        game.linksDownloadSecond = filteredArray2
+        
         Game.updateOne({_id : req.body.gameId}, game)
             .then(() => res.redirect('/'))
             .catch((error) => res.status(500).json({ error: 'Internal server error' }));
