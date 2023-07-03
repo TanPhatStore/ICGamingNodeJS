@@ -14,6 +14,7 @@ const Game = new Schema({
     images : {type : [String]},
     logo : {type : String},
     linksDownload : {type : [String]},
+    linksDownloadSecond : {type : [String]},
     logoSite : {type : String},
     releaseDate : {type : Date},
     updateDate : {type : Date},
