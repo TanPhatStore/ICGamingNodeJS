@@ -101,6 +101,16 @@ class GameController {
         } catch (error) {
             res.json({status : 500 , message : 'fail'})
         }
+    }
+
+    async updateSecond (req, res) {
+        try {
+            const game = await Game.findById(req.body.gameID)
+            await Game.updateOne({_id : game._id}, {second : (game.second + 1)})   
+            res.json({status : 200, message : 'success'})
+        } catch (error) {
+            res.json({status : 500 , message : 'fail'})
+        }
 
     }
 }
