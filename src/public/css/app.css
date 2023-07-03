@@ -12,7 +12,7 @@
   font-size: 20px; }
 
 .table-container {
-  max-height: 500px;
+  max-height: 540px;
   overflow-y: auto; }
 
 .table-container thead {
@@ -37,7 +37,7 @@ td {
 
 .title {
   text-align: center;
-  line-height: 50px; }
+  line-height: 60px; }
 
 .listGames {
   display: flex;
