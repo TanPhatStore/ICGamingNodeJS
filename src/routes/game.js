@@ -11,6 +11,7 @@ router.post('/game-deleteAll', gameController.deleteAll)
 router.get('/game-actions-insert', gameController.action_insert)
 router.get('/game-actions-update', gameController.action_update)
 router.put('/update-downloads-game', gameController.updateDownloads)
+router.put('/update-second-game', gameController.updateSecond)
 router.get('/', gameController.index)
 
 
