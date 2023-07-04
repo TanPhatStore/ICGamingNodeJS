@@ -59,7 +59,7 @@ class GameController {
         let filteredArray1 = game.linksDownload.filter(function(element) {
             return element !== "";
         });
-        game.linksDownload = filteredArray17
+        game.linksDownload = filteredArray1
 
         let filteredArray2 = game.linksDownloadSecond.filter(function(element) {
             return element !== "";
