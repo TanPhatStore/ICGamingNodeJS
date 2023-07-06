@@ -48,7 +48,6 @@ class GameController {
     async insert(req, res) {
         const gameData = req.body;
         const game = new Game(gameData);
-        const num = await Game.count({}) + 1
         game.updateDate = new Date()
         
         let filteredArray = game.images.filter(function(element) {
