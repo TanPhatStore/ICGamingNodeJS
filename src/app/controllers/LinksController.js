@@ -11,9 +11,11 @@ class LinksController {
     async insert (req, res) {
         try {
             const data = req.body
-            data.URL = `https://icgaming.vercel.app/links-${data.title.toLowerCase().split(' ').join('-')}`
             const links = new Links(data)
             await links.save()
+            const link = await Links.findById(req.query.id)
+            link.URL = `https://icgaming.vercel.app/links-${link._id}`
+            await link.save()
             res.json({status : 200})
         } catch (error) {
             res.json({status : 404})
