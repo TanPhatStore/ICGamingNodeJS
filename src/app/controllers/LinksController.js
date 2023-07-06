@@ -44,7 +44,7 @@ class LinksController {
 
     async update (req, res) {
         try {
-            await Links.updateOne({_id : req.body.id},{title : req.body.title, logo : req.body.logo, links : req.body.links})
+            await Links.updateOne({_id : req.body.id},{title : req.body.title, logo : req.body.logo, links : req.body.links, password : req.body.password})
             res.json({status : 200})
         } catch (error) {
             res.json({status : 500})
