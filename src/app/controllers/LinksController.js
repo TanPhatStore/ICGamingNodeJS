@@ -11,6 +11,7 @@ class LinksController {
     async insert (req, res) {
         try {
             const data = req.body
+            data.URL = `https://icgaming.vercel.app/links-${data.title.toLowerCase().split(' ').join('-')}`
             const links = new Links(data)
             await links.save()
             res.json({status : 200})
