@@ -13,7 +13,7 @@ class LinksController {
             const data = req.body
             const links = new Links(data)
             await links.save()
-            const link = await Links.findById(req.query.id)
+            const link = await Links.findOne({title : links.title})
             link.URL = `https://icgaming.vercel.app/links-${link._id}`
             await Links.updateOne({_id : link.id},{URL : link.URL})
             res.json({status : 200})
