@@ -16,7 +16,6 @@ async function connect () {
 
     setInterval(async () => {
         const d = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }).split(' ')[0]
-        console.log(d)
         if (parseInt(d.split(':')[0]) == 0 && parseInt(d.split(':')[1]) == 0 && parseInt(d.split(':')[2]) == 0) {
             await Game.updateMany({}, {second : 0, downloads : 0 })
         }
